@@ -1,0 +1,28 @@
+{{#my-modal title='Add Company'  ok='addCompany' close='removeModal'}}
+  <form {{action 'ok' on='submit' target=view}}>
+    <div class="form-group">
+      <label>Name</label>
+      {{input class="form-control" value=name}}
+    </div>
+    <div class="form-group">
+      <label>Address</label>
+      {{input class="form-control" value=address}}
+    </div>
+    <div class="form-group">
+      <label>City</label>
+      {{input class="form-control" value=city}}
+    </div>
+    <div class="form-group">
+      <label>State</label>
+      {{input class="form-control" value=state}}
+    </div>
+    <div class="form-group">
+      <label>Zip Code</label>
+      {{input class="form-control" value=zip_code}}
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      {{input class="form-control" value=phone_number}}
+    </div>
+  </form>
+{{/my-modal}}

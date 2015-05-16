@@ -15,4 +15,11 @@ App = Ember.Application.extend({
 
 loadInitializers(App, config.modulePrefix);
 
+
+
+Ember.LinkView.reopen({
+  attributeBindings: ['aria-controls', 'role', 'data-toggle']
+});
+
+
 export default App;

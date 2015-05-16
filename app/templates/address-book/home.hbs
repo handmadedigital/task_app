@@ -1,0 +1,39 @@
+
+<div id="addressBookHomeHeaderWrapper">
+	<div class="row">
+		<div class="col-md-10">
+			<form>
+				<div class="form-group">
+					<label for="companySearchInputText">Find Company</label>
+				    {{input type="text" value=searchKeyword class="form-control" id="inputContactSearch" }}
+				</div>
+			</form>
+		</div>
+		<div class="col-md-2">
+			<button class="btn btn-primary" {{action 'showModal' 'add-company-modal' model}}>Add Company</button>
+		</div>
+	</div>
+</div>
+
+<div id="addressBookHomeBodyWraper">
+	{{#each company in companyResults}}
+		<div class="panel panel-primary">
+			<div class="panel-heading pointer" {{action 'showDetails' company}}>
+		    	<h3 class="panel-title">{{company.name}}</h3>
+			</div>
+		    {{#if company.showDetails}}
+		 		<div class="panel-body">
+		   	 		<div class="company-details-wrapper">
+			    		<p><strong>Address: </strong>{{company.address}}</p>
+			    		<p><strong>City: </strong>{{company.city}}</p>
+			    		<p><strong>State: </strong>{{company.state}}</p>
+			    		<p><strong>Country: </strong>{{company.country}}</p>
+			    		<p><strong>Zip Code: </strong>{{company.zip_code}}</p>
+			    		<p><strong>Phone Number: </strong>{{company.phone}}</p>
+			    		<p>{{#link-to 'address-book.details' company.slug}}View All{{/link-to}}</p>
+			    	</div>
+		  		</div>
+		  {{/if}}
+		</div>
+	{{/each}}
+</div>

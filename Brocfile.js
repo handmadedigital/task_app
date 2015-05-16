@@ -6,7 +6,17 @@ var app = new EmberApp();
 
 // Use `app.import` to add additional libraries to the generated
 // output files.
-//
+
+app.import('bower_components/jquery/dist/jquery.js');
+app.import('bower_components/jquery/dist/jquery.js');
+app.import('bower_components/bootstrap/dist/css/bootstrap.css');
+app.import('bower_components/bootstrap/dist/js/bootstrap.js')
+app.import('bower_components/bootstrap-material-design/dist/js/material.js');
+app.import('bower_components/bootstrap-material-design/dist/css/material.css');
+
+
+
+
 // If you need to use different assets in different
 // environments, specify an object as the first parameter. That
 // object's keys should be the environment name and the values

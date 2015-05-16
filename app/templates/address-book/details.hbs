@@ -1,0 +1,49 @@
+<div id="companyDetailsWrapper">
+	<p{{action 'showDetails'}}>Details</p>
+	<p{{action 'showDetails'}}>Credentails</p>
+		{{#if showDetails}}
+			<button class="btn btn-primary">Add Employee</button>
+			<div class="panel panel-info">
+			  <div class="panel-heading">
+			    <h3 class="panel-title">Company Details</h3>
+			  </div>
+			  <div class="panel-body">
+			    <p><strong>Address: </strong>{{model.details.data.address}}</p>
+				<p><strong>City: </strong>{{model.details.data.city}}</p>
+				<p><strong>State: </strong>{{model.details.data.state}}</p>
+				<p><strong>Country: </strong>{{model.details.data.country}}</p>
+				<p><strong>Zip Code: </strong>{{model.details.data.zip_code}}</p>
+				<p><strong>Phone: </strong><a href="tel: +1{{model.details.data.phone_number}}">{{model.details.data.phone_number}}</a></p>
+			  </div>
+			</div>
+			<h2>Employee Details</h2>
+			{{#each m in model.employees.data}}
+				<div class="panel panel-info">
+				  <div class="panel-heading">
+				    <h3 class="panel-title">{{m.first_name}} {{m.last_name}}</h3>
+				  </div>
+				  <div class="panel-body">
+				    <p><strong>First Name: </strong>{{m.first_name}}</p>
+					<p><strong>Last Name: </strong>{{m.last_name}}</p>
+					<p><strong>Phone: </strong><a href="tel: +1{{m.phone_number}}">{{m.phone_number}}</a></p>
+					<p><strong>Email: </strong><a href="mailto:{{m.email}}">{{m.email}}</a></p>
+				  </div>
+				</div>
+			{{/each}}
+		{{else}}
+			{{#link-to 'address-book.add-credentials' model.slug}}<button class="btn btn-primary" >Add Credentials</button>{{/link-to}}
+			{{#each m in model.credentials.data}}
+				<div class="panel panel-info">
+				  
+				  <div class="panel-heading">
+				    <h3 class="panel-title">{{m.name}}</h3>
+				  </div>
+				  <div class="panel-body">
+					{{#each c in m.credentials.data}}
+						<p><strong>{{c.credential_option}}: </strong>{{c.credential}}</p>
+					{{/each}}
+				  </div>
+				</div>
+			{{/each}}
+		{{/if}}
+</div>
