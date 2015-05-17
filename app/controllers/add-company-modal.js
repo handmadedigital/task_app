@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
 	actions:{
 		addCompany: function(){
 			var self = this;
-			var data = self.getProperties('name', 'address', 'city', 'state', 'zip_code', 'phone_number');
+			var data = self.getProperties('name', 'address', 'city', 'state', 'zip_code', 'phone_number', 'email');
 			
 			$.post('http://localhost:8000/api/v1/company/add-company', data).then(function(response){
 				alert(response);

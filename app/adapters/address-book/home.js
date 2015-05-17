@@ -14,7 +14,8 @@ export default Ember.Object.extend({
                 		state: c.detail.data.state,
                 		country: c.detail.data.country,
                 		zip_code: c.detail.data.zip_code,
-                		phone: c.detail.data.phone_number,
+                        unformatted_phone: c.detail.data.unformatted_phone_number,
+                		formatted_phone: c.detail.data.formatted_phone_number,
                         email: c.detail.data.email,
                 		showDetails: false
                 	}

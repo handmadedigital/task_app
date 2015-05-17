@@ -17,13 +17,13 @@
 
 <div id="addressBookHomeBodyWraper">
 	{{#each company in companyResults}}
-		<div class="addressbook-company-info-wrapper">
-			<div class="addressbook-company-info-title" {{action 'showDetails' company}}>
-				<h3>{{company.name}}</h3>
+		<div class="panel-wrapper">
+			<div class="panel-header" {{action 'showDetails' company}}>
+				<h3 class="panel-title">{{company.name}}</h3>
 				<i class="fa fa-plus fa-6 right"></i>
 			</div>
-			{{#liquid-if company.showDetails}}
-				<div class="addressbook-company-info-details">
+			{{#liquid-if company.showDetails class="panel"}}
+				<div class="panel-body">
 					<div class="row">
 						<div class="col-md-4">
 							<div class="addressbook-company-address-wrapper">
@@ -34,7 +34,7 @@
 							<h4><i class="fa fa-envelope"></i><span class="addressbook-company-detail-text"><a href="mailto:{{company.email}}">{{company.email}}</a></span></h4>
 						</div>
 						<div class="col-md-4">
-							<h4><i class="fa fa-phone"></i><span class="addressbook-company-detail-text"><a href="tel: +1{{company.phone}}">{{company.phone}}</a></span></h4>
+							<h4><i class="fa fa-phone"></i><span class="addressbook-company-detail-text"><a href="tel: +1{{company.unformatted_phone}}">{{company.formatted_phone}}</a></span></h4>
 						</div>
 						<div class="col-md-12">
 							<div class="center addressbook-view-more-wrapper">
