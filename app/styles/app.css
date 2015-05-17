@@ -16,7 +16,9 @@ ul{list-style-type: none;}
 	background: #455A64;
 }
 
-
+.navbar .navbar-brand, .navbar .navbar-nav > li > a {
+	color: #fff;
+}
 
 /****************************/
 /* AUTH */
@@ -33,7 +35,7 @@ ul{list-style-type: none;}
 /* ADDRESS BOOK LAYOUT */
 /*****************************/
 #addressBookSidebar{
-	background: #727272;
+	background: #607D8B;
 	height: 1000px;
 }
 #addressBookHomeHeaderWrapper{

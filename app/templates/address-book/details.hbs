@@ -36,7 +36,7 @@
 			<div class="company-employees-detail-wrapper">
 				<div class="company-employess-detail-info-wrapper">
 					<h2>Employee Details</h2>
-					<button class="right btn btn-success">Add Employee</button>
+					<button class="btn btn-primary right" {{action 'showModal' 'add-employee-modal' model}}>Add Employee</button>
 				</div>
 				{{#each employee in model.employees.data}}
 					<div class="panel-wrapper">
@@ -57,7 +57,7 @@
 				{{/each}}
 			</div>
 		{{else}}
-			{{#link-to 'address-book.add-credentials' model.slug}}<button class="btn btn-primary" >Add Credentials</button>{{/link-to}}
+			{{#link-to 'address-book.add-credentials' model.slug}}<button class="btn btn-sucess" >Add Credentials</button>{{/link-to}}
 			{{#each m in model.credentials.data}}
 				<div class="panel-wrapper">
 				  
