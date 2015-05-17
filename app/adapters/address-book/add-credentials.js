@@ -25,5 +25,11 @@ export default Ember.Object.extend({
                     }
                 });
             });
-	}
+	},
+
+    createCredential: function(data){
+        $.post('http://localhost:8000/api/v1/credential/add-credential', data).then(function(response){
+                alert(response);
+            });
+    }
 });

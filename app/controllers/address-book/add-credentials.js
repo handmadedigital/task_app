@@ -34,7 +34,12 @@ export default Ember.Controller.extend({
 
 	actions: {
 		addCredentials: function(){
-			console.log(this.get('groupCredential'));
+			var self = this;
+			var data = this.getProperties('group', 'option', 'credential');
+			var adapter = AddCredentialAdapter.create();
+
+			adapter.createCredential(data);
+
 		}
 	}
 	
