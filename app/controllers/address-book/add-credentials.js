@@ -3,9 +3,18 @@ import AddCredentialAdapter from 'task-app/adapters/address-book/add-credentials
 
 export default Ember.Controller.extend({
 	groups: null,
-	showAddCredentials: true,
-	showAddCredentialGroup: false,
-	showAddCredentialOption: false,
+	options: null,
+
+	setOptions: function(){
+		var self = this;
+	     var model = this.get('model');
+	     var adapter = AddCredentialAdapter.create();
+	     var groups = adapter.getOptions(model.company_slug);
+	     groups.then(function(response){
+	         self.set('options', response);
+	     });
+	}.observes('model'),
+
 
 	setGroups: function(){
 	     var self = this;
@@ -19,6 +28,8 @@ export default Ember.Controller.extend({
 
 	initialize: function(){
 	    this.set('groups', []);
+	    this.set('options', []);
+
 	}.on('init'),
 
 	actions: {

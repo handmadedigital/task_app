@@ -15,12 +15,15 @@ export default Ember.Object.extend({
             });
 	},
 
-	getCredentialOptions: function(company){
+	getOptions: function(company){
 		return ajax('http://localhost:8000/api/v1/'+company+'/credential-options')
             .then(function(response){
-                return {
-                	name: response.data.name,
-                }
+                return response.data.map(function(c){
+                    return {
+                        id: c.id,
+                        name: c.name
+                    }
+                });
             });
 	}
 });
