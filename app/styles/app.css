@@ -88,7 +88,9 @@ p,span,a,label,li,h1,h2,h3,h4,h5,h6{
 .company-primary-details-title{
 	padding: 0 10px;
 }
-
+.company-employess-detail-info-wrapper{
+	padding: 0 10px;
+}
 .company-primary-detials-info-wrapper .title{
 	background: #607D8B;
 	padding: 1px 10px 5px 10px;
@@ -106,4 +108,16 @@ p,span,a,label,li,h1,h2,h3,h4,h5,h6{
 }
 .company-employess-detail-info-wrapper, .company-primary-details-title{
 	border-bottom: solid 2px #B6B6B6;
+}
+.company-primary-details-wrapper{
+	margin-bottom: 50px;
+}
+.company-employess-detail-info-wrapper button{
+	margin-top: -2.6%;
+    margin-right: 5%;
+}
+.go-bk-wrapper{
+	font-size: 35px;
+  	margin-left: 2%;
+  	cursor: pointer;
 }
