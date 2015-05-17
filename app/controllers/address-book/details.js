@@ -5,10 +5,14 @@ export default Ember.Controller.extend({
 
 	actions:{
 		showDetails:function(){
-			this.toggleProperty('showDetails');
+			if(this.showDetails == false){
+				this.toggleProperty('showDetails');
+			}
 		},
 		showCredentials: function() {
-			this.toggleProperty('showDetails');
+			if(this.showDetails == true){
+				this.toggleProperty('showDetails');
+			}
 		}
 	}
 });

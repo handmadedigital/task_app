@@ -15,6 +15,7 @@ export default Ember.Object.extend({
                 		country: c.detail.data.country,
                 		zip_code: c.detail.data.zip_code,
                 		phone: c.detail.data.phone_number,
+                        email: c.detail.data.email,
                 		showDetails: false
                 	}
                 });
