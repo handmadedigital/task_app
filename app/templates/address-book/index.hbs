@@ -1,0 +1,54 @@
+
+<div id="addressBookHomeHeaderWrapper">
+	<div class="row">
+		<div class="col-md-10">
+			<form>
+				<div class="form-group">
+					<label for="companySearchInputText">Find Company</label>
+				    {{input type="text" value=searchKeyword class="form-control" id="inputContactSearch" }}
+				</div>
+			</form>
+		</div>
+		<div class="col-md-2">
+			<button class="btn btn-success" {{action 'showModal' 'add-company-modal' model}}>Add Company</button>
+		</div>
+	</div>
+</div>
+
+<div id="addressBookHomeBodyWraper">
+	{{#each company in companyResults}}
+		<div class="panel-wrapper pointer">
+			<div class="panel-header" {{action 'showDetails' company}}>
+				<h3 class="panel-title">{{company.name}}</h3>
+				<i class="fa fa-plus fa-6 right"></i>
+			</div>
+			{{#liquid-if company.showDetails class="panel"}}
+				<div class="panel-body">
+					<div class="edit-company-details-wrapper" {{action 'showModal' 'edit-company-modal' company}}>
+						<i class="fa fa-pencil-square right"></i>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="addressbook-company-address-wrapper">
+								<h4><i class="fa fa-home"></i><span class="addressbook-company-detail-text">{{company.address}},</span><br/><span class="addressbook-company-detail-text-second-line">{{company.city}}, {{company.state}}, {{company.zip_code}}</span></h4>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<h4><i class="fa fa-envelope"></i><span class="addressbook-company-detail-text"><a href="mailto:{{company.email}}">{{company.email}}</a></span></h4>
+						</div>
+						<div class="col-md-4">
+							<h4><i class="fa fa-phone"></i><span class="addressbook-company-detail-text"><a href="tel: +1{{company.unformatted_phone}}">{{company.formatted_phone}}</a></span></h4>
+						</div>
+						<div class="col-md-12">
+							<div class="center addressbook-view-more-wrapper">
+								{{#link-to 'address-book.details' company.slug}}
+									View All Details<i class="fa fa-share"></i>
+								{{/link-to}}
+							</div>
+						</div>
+					</div>
+				</div>
+			{{/liquid-if}}
+		</div>
+	{{/each}}
+</div>

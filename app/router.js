@@ -13,7 +13,7 @@ export default Router.map(function() {
   this.route('protected');
 
   this.resource('address-book', function(){
-    this.route('home');
+    this.route('index');
 
     this.route('details', {path: '/:company_slug/details'});
 

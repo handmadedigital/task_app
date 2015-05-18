@@ -10,11 +10,14 @@
 		{{#liquid-if showDetails class="display"}}
 			<div class="company-primary-details-wrapper">
 				<div class="company-primary-details-title">
-					<h2>Primary Company Credentials</h2>
+					<h2>Primary Company Details</h2>
 				</div>
 				<div class="panel-wrapper">
 					<div class="panel-header">
 						<h3 class="panel-title">{{model.name}}</h3>
+						{{#if isHovered}}
+							<i class="fa fa-pencil right"></i>
+						{{/if}}	
 					</div>
 					<div class="panel-body">
 						<div class="row">
@@ -36,7 +39,7 @@
 			<div class="company-employees-detail-wrapper">
 				<div class="company-employess-detail-info-wrapper">
 					<h2>Employee Details</h2>
-					<button class="btn btn-primary right" {{action 'showModal' 'add-employee-modal' model}}>Add Employee</button>
+					<button class="btn btn-success right" {{action 'showModal' 'add-employee-modal' model}}>Add Employee</button>
 				</div>
 				{{#each employee in model.employees.data}}
 					<div class="panel-wrapper">

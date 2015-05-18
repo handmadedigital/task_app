@@ -18,6 +18,15 @@ export default Ember.Controller.extend({
 				alert(response);
 			});
 
+			this.get('model').push({
+				name: data.name,
+				address: data.address,
+				city: data.city,
+				state: data.state
+			});
+
+			console.log(this.get('model'));
+
 			self.clearProperties();
 		}
 	}

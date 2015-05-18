@@ -5,9 +5,10 @@ export default Ember.Controller.extend({
 
 	clearProperties: function(){
 		this.setProperties({
-			username: "",
+			first_name: "",
+			last_name: "",
 			email: "",
-			password: ""
+			phone: ""
 		});
 	},
 
